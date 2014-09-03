@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% filter markdown %}
+
+### Star Rocket
+
+<p class="lead">
+    A cartoon-themed space game with over 120 action-packed levels! Navigate
+    your rocket through a universe filled with planets, asteroids, bumpers,
+    teleports and items... collecting all of the stars as you go!
+</p>
+
+<div class="thumbnail">
+    <img src="{{ static('img/project/star-rocket/3.png') }}">
+</div>
+
+<div style="text-align: center;">
+    <a href="https://itunes.apple.com/us/app/star-rocket/id419027792?mt=8">
+        <img src="{{ static('img/platform/app-store.png') }}">
+    </a>
+</div>
+
+---
+
+#### Objectives
+
+* Collect all of the stars in each level.
+* Complete each level as quickly as possible. You will be rewarded 1, 2 or 3
+  stars for each level, depending on your time.
+
+#### Details
+
+* Planets exert gravity on your rocket - don't get too close or you won't be
+  able to escape the pull of the gravity!
+* Magnets let you attract and collect stars from a greater distance!
+* Shields let you plow through and destroy asteroids!
+* Flames give you an instant boost in the direction you are pointing.
+* Your rocket will bounce off of bumpers. Try it - it's fun (but not always
+  helpful)!
+* Teleports instantly transport you to another teleport location.
+
+---
+
+<div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/xcOwKvCPAGE?rel=0" allowfullscreen></iframe>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="thumbnail">
+            <img src="{{ static('img/project/star-rocket/1.png') }}">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="thumbnail">
+            <img src="{{ static('img/project/star-rocket/2.png') }}">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="thumbnail">
+            <img src="{{ static('img/project/star-rocket/4.png') }}">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="thumbnail">
+            <img src="{{ static('img/project/star-rocket/5.png') }}">
+        </div>
+    </div>
+</div>
+
+{% endfilter %}
+
+{% endblock %}

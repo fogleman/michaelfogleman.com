@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% filter markdown %}
+
+### DCPU-16
+
+<p class="lead">
+    An assembler, disassembler and emulator for the virtual DCPU-16 written in
+    Python and C. The DCPU-16 was intended to form the basis of a video game
+    by Mojang called 0x10c. Work on the game has since discontinued.
+</p>
+
+<div class="thumbnail" style="border: none;">
+    <img src="{{ static('img/project/dcpu/nyan.gif') }}">
+</div>
+
+#### DCPU-16 Highlights
+
+* 16 bit words
+* 0x10000 words of ram
+* 8 registers (A, B, C, X, Y, Z, I, J)
+* program counter (PC)
+* stack pointer (SP)
+* extra/excess (EX)
+* interrupt address (IA)
+
+#### Implemented Specifications
+
+* DCPU-16 1.7
+* LEM1802
+* Generic Keyboard
+* Generic Clock
+
+#### Source Code
+
+https://github.com/fogleman/DCPU-16
+
+{% endfilter %}
+
+{% endblock %}

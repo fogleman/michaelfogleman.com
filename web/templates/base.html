@@ -1,0 +1,74 @@
+{% from "util.html" import nav_link with context %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Michael Fogleman</title>
+        <link rel="stylesheet" href="{{ static('bootstrap/css/readable.min.css') }}">
+        <link href="{{ static('favicon.ico') }}" rel="shortcut icon" type="image/x-icon">
+        <link href="{{ static('style.css') }}" rel="stylesheet">
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+        <script src="{{ static('jquery/jquery.min.js') }}"></script>
+        <script src="{{ static('bootstrap/js/bootstrap.min.js') }}"></script>
+    </head>
+    <body>
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{{ url_for('index') }}">Michael Fogleman</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        {{ nav_link('Home', 'index', 'glyphicon-home') }}
+                        {{ nav_link('Projects', 'projects', 'glyphicon-heart') }}
+                        {{ nav_link('Resume', 'resume', 'glyphicon-file') }}
+                        <li class="dropdown">
+                            <a href="" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-list"></span> GitHub <span class="caret"></span></a>
+                            <ul class="dropdown-menu scrollable-menu">
+                                <li class="dropdown-header">Sorted By Popularity</li>
+                                {% for repo in repos %}
+                                    <li><a href="{{ repo['html_url'] }}">
+                                        {% if repo['watchers'] %}
+                                            <span class="pull-right text-muted">{{ '{:,d}'.format(repo['watchers']) }}</span>
+                                        {% endif %}
+                                        <span style="padding-right: 30px;">{{ repo['name'] }}</span>
+                                    </a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <div class="footer">
+            <div>
+                <!-- social icons by http://simpleicons.org/ -->
+                <a href="https://www.facebook.com/michael.fogleman"><img src="{{ static('img/social/facebook.png') }}"></a>
+                <a href="https://github.com/fogleman"><img src="{{ static('img/social/github.png') }}"></a>
+                <a href="https://plus.google.com/u/0/106039384993136287582/posts"><img src="{{ static('img/social/google-plus.png') }}"></a>
+                <a href="http://www.linkedin.com/profile/view?id=4051253"><img src="{{ static('img/social/linked-in.png') }}"></a>
+                <a href="http://www.reddit.com/user/FogleMonster/"><img src="{{ static('img/social/reddit.png') }}"></a>
+                <a href="http://stackoverflow.com/users/90308/foglebird"><img src="{{ static('img/social/stack-overflow.png') }}"></a>
+                <a href="https://twitter.com/FogleBird"><img src="{{ static('img/social/twitter.png') }}"></a>
+                <a href="http://www.youtube.com/user/FogleBird"><img src="{{ static('img/social/youtube.png') }}"></a>
+                <a href="mailto:michael.fogleman@gmail.com"><img src="{{ static('img/social/email.png') }}"></a>
+            </div>
+            <p class="text-muted">&copy; Michael Fogleman, 2014. All rights reserved.</p>
+        </div>
+    </body>
+</html>

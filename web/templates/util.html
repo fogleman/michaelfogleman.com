@@ -1,0 +1,3 @@
+{%- macro nav_link(label, endpoint, glyphicon) -%}
+    <li {% if endpoint == request.endpoint %}class="active"{% endif %}><a href="{{ url_for(endpoint, **kwargs) }}">{% if glyphicon %}<span class="glyphicon {{ glyphicon }}"></span> {% endif %}{{ label }}</a></li>
+{%- endmacro -%}

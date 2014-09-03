@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% filter markdown %}
+
+### Scale: Beautiful Fractals for Mac OS X
+
+<p class="lead">
+    Explore the mathematical beauty of fractals and create stunning fractal art
+    with Scale. Scale is fast and a pleasure to use. It was designed from the
+    ground up to be intuitive and user-friendly.
+</p>
+
+<div class="thumbnail">
+    <img src="{{ static('img/project/scale/scale.png') }}">
+</div>
+
+<div style="text-align: center;">
+    <a href="https://itunes.apple.com/us/app/scale/id610187081?ls=1&mt=12">
+        <img src="{{ static('img/platform/app-store.png') }}">
+    </a>
+</div>
+
+#### Features
+
+* Click and drag or use arrow keys to pan.
+* Double-click to zoom in.
+* Right-click to zoom out.
+* User-configurable gradients with several built-in color palettes.
+* Configurable antialiasing.
+* Configurable fractal detail.
+* Render to disk at high resolution to easily create wallpapers or poster prints.
+* Randomize to quickly explore different fractals.
+* Mandelbrot and Julia sets supported.
+* Uses tile caching to avoid recomputing fractals.
+* Uses all CPU cores for rendering
+* Supports full-screen mode.
+
+#### Samples
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="thumbnail">
+            <img src="{{ static('img/project/scale/1.jpg') }}">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="thumbnail">
+            <img src="{{ static('img/project/scale/2.jpg') }}">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="thumbnail">
+            <img src="{{ static('img/project/scale/3.jpg') }}">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="thumbnail">
+            <img src="{{ static('img/project/scale/4.jpg') }}">
+        </div>
+    </div>
+</div>
+
+{% endfilter %}
+
+{% endblock %}

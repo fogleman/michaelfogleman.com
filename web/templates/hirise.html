@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% filter markdown %}
+
+### HiRISE
+
+<p class="lead">
+    Real-time 3D renderings of HiRISE Digital Terrain Models (DTMs).
+    Implemented using pg, an OpenGL library for Python that I developed.
+</p>
+
+<div class="thumbnail">
+    <img src="{{ static('img/project/hirise/hirise.png') }}">
+</div>
+
+#### Discussion
+
+The digital terrain models can be found here:
+
+http://www.uahirise.org/dtm/
+
+The models are in PDS format. GDAL is used to parse these files. A
+pre-processing step is required to generate a 3D triangle mesh and a normal
+texture. The normal texture improves the appearance of the rendering without
+requiring a highly detailed mesh.
+
+#### Source Code
+
+* https://github.com/fogleman/HiRISE
+* https://github.com/fogleman/pg
+
+#### Videos
+
+* [Flying Over Mars](https://www.youtube.com/watch?v=ANoLYyRpcqk)
+* [Exposures of Layered Bedrock Northwest of Hellas Region](https://www.youtube.com/watch?v=_sZwB01Mhzw)
+
+{% endfilter %}
+
+{% endblock %}

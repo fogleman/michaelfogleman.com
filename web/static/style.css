@@ -1,0 +1,68 @@
+p, ul {
+    line-height: 1.75em;
+}
+
+h4, h5, h6 {
+    margin: 16px 0 11px 0;
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 800px;
+    }
+}
+
+.embed-responsive {
+    margin-bottom: 22px;
+}
+
+.footer {
+    margin: 20px 0;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
+p.lead {
+    font-size: 14pt;
+    line-height: 1.5em;
+    text-align: justify;
+}
+
+.scrollable-menu {
+    height: auto;
+    max-height: 400px;
+    overflow-x: hidden;
+}
+
+.projects h4 {
+    text-align: center;
+    margin: 0 0 30px 0;
+    font-size: 14pt;
+}
+
+.projects .thumbnail {
+    margin: 0 0 10px 0;
+}
+
+.platforms {
+    text-align: center;
+}
+
+.platforms a {
+    color: #333;
+}
+
+.platforms a:hover {
+    text-decoration: none;
+}
+
+.button-row {
+    text-align: center;
+    margin: 1em;
+}
+
+.words-row {
+    text-align: center;
+    text-transform: capitalize;
+}

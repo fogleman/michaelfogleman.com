@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% filter markdown %}
+
+### iMeme
+
+<p class="lead">
+    iMeme is a meme generator for Windows and Mac OS X that lets you quickly
+    add captions to popular internet memes.
+</p>
+
+<div class="thumbnail" style="border: none;">
+    <img src="{{ static('img/project/imeme/imeme.png') }}">
+</div>
+
+#### Download
+
+Last Updated: 2012-12-08
+
+<div class="row platforms">
+    <div class="col-md-6">
+        <a class="thumbnail" href="{{ static('iMeme-setup.exe') }}">
+            <img src="{{ static('img/platform/windows.png') }}">
+            <h3>Windows</h3>
+            <h4>iMeme-setup.exe (11 MB)</h4>
+        </a>
+    </div>
+    <div class="col-md-6">
+        <a class="thumbnail" href="{{ static('iMeme.app.zip') }}">
+            <img src="{{ static('img/platform/mac.png') }}">
+            <h3>Mac OS X</h3>
+            <h4>iMeme.app.zip (6 MB)</h4>
+        </a>
+    </div>
+</div>
+
+#### Features
+
+* Over 100 built-in templates.
+* Enter your own header and footer text.
+* Adjustable text size and alignment.
+* Use your own images.
+* Save as PNG or copy to the clipboard.
+* Print directly from the app.
+* Automatically upload to imgur.
+* Automatically post to reddit.
+* Works on OS X 10.5 and up.
+* Works on Windows XP and up.
+
+#### Contribute
+
+iMeme is open source and hosted on GitHub!
+
+* https://github.com/fogleman/pyMeme (Windows)
+* https://github.com/fogleman/iMeme (Mac OS X)
+
+{% endfilter %}
+
+{% endblock %}
