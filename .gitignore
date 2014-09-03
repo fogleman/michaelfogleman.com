@@ -1,3 +1,5 @@
-env
+/env
+/static
+/wsgi.py
 *.pyc
 
