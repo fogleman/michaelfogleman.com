@@ -3,15 +3,16 @@ from functools import wraps
 from operator import itemgetter
 from web import app
 from werkzeug.contrib.cache import SimpleCache
+import os
 import requests
-import urlparse
 
-def static(path):
-    root = app.config.get('STATIC_ROOT')
-    if app.debug or root is None:
-        return url_for('static', filename=path)
+def static(path, bust=False):
+    if bust:
+        file_path = os.path.join(app.root_path, app.static_folder, path)
+        modified = int(os.stat(file_path).st_mtime)
+        return url_for('static', filename=path, bust=modified)
     else:
-        return urlparse.urljoin(root, path)
+        return url_for('static', filename=path)
 
 @app.context_processor
 def context_processor():
