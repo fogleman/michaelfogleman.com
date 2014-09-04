@@ -1,101 +1,153 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h3>Summary</h3>
-    <div class="thumbnail pull-right" style="margin-left: 20px;">
-        <a href="{{ static('resume.pdf') }}"><img src="{{ static('img/pdf.png') }}"></a>
-    </div>
-    <p class="lead">I love creating software and my development skills are well rounded. I am proficient with data structures, algorithms, design patterns, database design, user interfaces, etc. I focus on results and pay close attention to detail.</p>
-    <p class="lead">E-mail: <a href="mailto:michael.fogleman@gmail.com">michael.fogleman@gmail.com</a></p>
-    <h3>Education</h3>
-    <h4>B.S. Computer Science at <a href="http://www.ncsu.edu/">North Carolina State University</a></h4>
-    <h5>August 2000 - May 2005</h5>
-    <ul>
-        <li>Cooperative Education Program</li>
-        <li>University Scholars Program</li>
-        <li>Magna Cum Laude</li>
-    </ul>
-    <h3>Languages and Technologies</h3>
-    <ul>
-        <li>Python</li>
-        <li>C</li>
-        <li>Objective-C</li>
-        <li>Java</li>
-        <li>SQL</li>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-    </ul>
-    <h3>Experience</h3>
-    <h4>Senior Software Engineer at <a href="http://transloc.com/">TransL&#x014D;c</a></h4>
-    <h5>November 2013 - Present</h5>
-    <ul>
-        <li>Measured the accuracy of TransL&#x014D;c's arrival predictions. Uncovered potential issues and possible improvements.</li>
-        <li>Parsed and aggregated automatic passenger counting (APC) data to derive several metrics useful to transit agencies including: total ridership, cost per passenger, most used stops, etc.</li>
-        <li>Developed a functional prototype of a transit analytics dashboard.</li>
-        <li>Analyzed huge database of passenger geolocation data to discover patterns in transit system usage.</li>
-    </ul>
-    <h4>Principal Software Engineer at <a href="http://www.liquid-logic.com/">Advanced Liquid Logic</a></h4>
-    <h5>August 2008 - November 2013</h5>
-    <ul>
-        <li>Developed the Assay Development Environment (ADE), an application that...</li>
-        <ul>
-            <li>Allows users (biochemists and engineers) to develop programs for microﬂuidic devices by building drag-and-drop ﬂow-charts instead of writing code.</li>
-            <li>Is used daily by dozens of co-workers to develop, simulate and run experiments.</li>
-            <li>Includes sophisticated algorithms for compiling diagrams into runnable code, synchronizing droplet operations, compressing programs, visualizing simulations, etc.</li>
-            <li>Was pretty much the coolest software I’ve ever created in the workplace.</li>
-        </ul>
-        <li>Developed Spot Logic, an application that...</li>
-        <ul>
-            <li>Is the software portion of a product used to test newborns for several genetic diseases.</li>
-            <li>Was deployed in Illinois and Missouri for newborn screening.</li>
-        </ul>
-        <li>Developed "The Fridge", a web application that...</li>
-        <ul>
-            <li>Records metadata and results for experiments in a centralized database (over 20,000 runs).</li>
-            <li>Includes a sophisticated web interface for viewing and managing data.</li>
-        </ul>
-        <li>Developed a touch screen user interface for a DNA sample preparation instrument.</li>
-        <li>Developed an application that utilized an XYZ stage and a USB camera to optically validate cartridges manufactured in-house.</li>
-        <li>Developed a web application with a desktop client for performing QC tests on disposable cartridges and recording the results.</li>
-        <li>Developed a web application for managing product keys for activating our software.</li>
-    </ul>
-    <h4>Software Architect and Project Manager at <a href="http://www.topcoder.com/">TopCoder</a></h4>
-    <h5>July 2005 - May 2008</h5>
-    <ul>
-        <li>Developed the grammar for a proprietary scripting language and designed the software to parse, validate and interpret these scripts in both live and historical stock market contexts.</li>
-        <li>Designed a virtual trade engine to simulate order executions by processing stock market feeds and a real-market trade engine to forward orders to live exchanges.</li>
-        <li>Developed several utility applications including:</li>
-        <ul>
-            <li>Software to monitor systems and email administrators in the event of failures.</li>
-            <li>Software to generate statistical and administrative reports and charts.</li>
-        </ul>
-        <li>Optimized database tables and procedures as necessary to improve performance.</li>
-        <li>Designed a web-based survey application.</li>
-        <li>Developed an internal tool for tracking upcoming TopCoder competitions.</li>
-    </ul>
-    <h4>Programmer (Co-op) at <a href="http://www.ibm.com/">IBM</a></h4>
-    <h5>January 2004 – June 2005</h5>
-    <ul>
-        <li>Designed and developed a ﬂexible software framework to reduce the time and effort required to create industrial automation solutions.</li>
-        <li>Built a simulated oil pipeline to visually demonstrate the capabilities of our platform.</li>
-        <li>Received an individual evaluation of "Outstanding" after completing the Extreme Blue internship program.</li>
-        <li>Developed a web-based app for monitoring trafﬁc on a topic-based messaging framework.</li>
-        <li>Developed and tested an AOL "channel adapter" using the TOC protocol to enable the INS product to send notiﬁcations to instant messenger users.</li>
-        <li>Developed software on top of IBM's evolving RFID platform which was heavily inﬂuenced by the results of my prior Extreme Blue project.</li>
-        <li>Implemented a "Dock Door Receiving" demo to showcase IBM's RFID platform.</li>
-        <li>Created an interactive, SWT-based user interface for the demonstration.</li>
-        <li>Developed a servlet-driven webpage for ordering new inventory from a virtual distribution company for the demonstration.</li>
-        <li>Helped create an application using the Eclipse RCP framework for viewing virtual inventory and shipments for the demonstration.</li>
-    </ul>
-    <h4>Programmer (Co-op) at <a href="http://www.remservices.com/">REM Services</a></h4>
-    <h5>January 2002 – August 2003</h5>
-    <ul>
-        <li>Developed a web page to display real-time weather data collected on-site.</li>
-        <li>Developed COM-based software to retrieve data from the DeltaV process control system for use in other software.</li>
-        <li>Developed Pocket PC software to assist execution of hardware test procedures.</li>
-        <li>Designed and developed software to wirelessly integrate Pocket PC devices with DeltaV systems, allowing operators to access data previously available only on desktops.</li>
-        <li>Developed software to generate documentation from DeltaV conﬁguration ﬁles.</li>
-        <li>Developed a website to showcase in-house software and demos.</li>
-    </ul>
+
+{% filter markdown %}
+
+### Summary
+
+<div class="thumbnail pull-right" style="margin-left: 20px;">
+    <a href="{{ static('resume.pdf') }}">
+        <img src="{{ static('img/pdf.png') }}">
+    </a>
+</div>
+
+<p class="lead">
+    I love creating software and my development skills are well rounded. I am
+    proficient with data structures, algorithms, design patterns, database
+    design, user interfaces, etc. I focus on results and pay close attention
+    to detail.
+</p>
+
+<p class="lead">
+    E-mail:
+    <a href="mailto:michael.fogleman@gmail.com">michael.fogleman@gmail.com</a>
+</p>
+
+### Education
+
+#### B.S. Computer Science at [North Carolina State University][1]
+##### August 2000 - May 2005
+
+* Cooperative Education Program
+* University Scholars Program
+* Magna Cum Laude
+
+### Languages and Technologies
+
+* Python
+* C
+* Objective-C
+* Java
+* SQL
+* HTML
+* CSS
+* JavaScript
+
+### Experience
+
+#### Senior Software Engineer at [TransL&#x014D;c][2]
+##### November 2013 - Present
+
+* Measured the accuracy of TransL&#x014D;c's arrival predictions. Uncovered
+  potential issues and possible improvements.
+* Parsed and aggregated automatic passenger counting (APC) data to derive
+  several metrics useful to transit agencies including: total ridership, cost
+  per passenger, most used stops, etc.
+* Developed a functional prototype of a transit analytics dashboard.
+* Analyzed huge database of passenger geolocation data to discover patterns in
+  transit system usage.
+
+#### Principal Software Engineer at [Advanced Liquid Logic][3]
+##### August 2008 - November 2013
+
+* Developed the Assay Development Environment (ADE), an application that...
+    * Allows users (biochemists and engineers) to develop programs for
+      microﬂuidic devices by building drag-and-drop ﬂow-charts instead of
+      writing code.
+    * Is used daily by dozens of co-workers to develop, simulate and run
+      experiments.
+    * Includes sophisticated algorithms for compiling diagrams into runnable
+      code, synchronizing droplet operations, compressing programs,
+      visualizing simulations, etc.
+    * Was pretty much the coolest software I’ve ever created in the workplace.
+* Developed Spot Logic, an application that...
+    * Is the software portion of a product used to test newborns for several
+      genetic diseases.
+    * Was deployed in Illinois and Missouri for newborn screening.
+* Developed "The Fridge", a web application that...
+    * Records metadata and results for experiments in a centralized database
+      (over 20,000 runs).
+    * Includes a sophisticated web interface for viewing and managing data.
+* Developed a touch screen user interface for a DNA sample preparation
+  instrument.
+* Developed an application that utilized an XYZ stage and a USB camera to
+  optically validate cartridges manufactured in-house.
+* Developed a web application with a desktop client for performing QC tests
+  on disposable cartridges and recording the results.
+* Developed a web application for managing product keys for activating our
+  software.
+
+#### Software Architect and Project Manager at [TopCoder][4]
+##### July 2005 - May 2008
+
+* Developed the grammar for a proprietary scripting language and designed the
+  software to parse, validate and interpret these scripts in both live and
+  historical stock market contexts.
+* Designed a virtual trade engine to simulate order executions by processing
+  stock market feeds and a real-market trade engine to forward orders to live
+  exchanges.
+* Developed several utility applications including:
+    * Software to monitor systems and email administrators in the event of
+      failures.
+    * Software to generate statistical and administrative reports and charts.
+* Optimized database tables and procedures as necessary to improve performance.
+* Designed a web-based survey application.
+* Developed an internal tool for tracking upcoming TopCoder competitions.
+
+#### Programmer (Co-op) at [IBM][5]
+##### January 2004 – June 2005
+
+* Designed and developed a ﬂexible software framework to reduce the time and
+  effort required to create industrial automation solutions.
+* Built a simulated oil pipeline to visually demonstrate the capabilities of
+  our platform.
+* Received an individual evaluation of "Outstanding" after completing the
+  Extreme Blue internship program.
+* Developed a web-based app for monitoring trafﬁc on a topic-based messaging
+  framework.
+* Developed and tested an AOL "channel adapter" using the TOC protocol to
+  enable the INS product to send notiﬁcations to instant messenger users.
+* Developed software on top of IBM's evolving RFID platform which was heavily
+  inﬂuenced by the results of my prior Extreme Blue project.
+* Implemented a "Dock Door Receiving" demo to showcase IBM's RFID platform.
+* Created an interactive, SWT-based user interface for the demonstration.
+* Developed a servlet-driven webpage for ordering new inventory from a virtual
+  distribution company for the demonstration.
+* Helped create an application using the Eclipse RCP framework for viewing
+  virtual inventory and shipments for the demonstration.
+
+#### Programmer (Co-op) at [REM Services][6]
+##### January 2002 – August 2003
+
+* Developed a web page to display real-time weather data collected on-site.
+* Developed COM-based software to retrieve data from the DeltaV process
+  control system for use in other software.
+* Developed Pocket PC software to assist execution of hardware test
+  procedures.
+* Designed and developed software to wirelessly integrate Pocket PC devices
+  with DeltaV systems, allowing operators to access data previously available
+  only on desktops.
+* Developed software to generate documentation from DeltaV conﬁguration ﬁles.
+* Developed a website to showcase in-house software and demos.
+
+[1]: http://www.ncsu.edu/
+[2]: http://transloc.com/
+[3]: http://www.liquid-logic.com/
+[4]: http://www.topcoder.com/
+[5]: http://www.ibm.com/
+[6]: http://www.remservices.com/
+
+{% endfilter %}
+
 {% endblock %}
