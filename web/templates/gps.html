@@ -32,6 +32,10 @@ So I just ordered it and hoped it would do what I wanted.
 
 The device I am using is the [GlobalSat BU-353-S4 USB GPS Receiver][2].
 
+<div class="thumbnail">
+    <img src="{{ static('img/project/gps/device.jpg') }}">
+</div>
+
 ##### NMEA 0183
 
 Once my hardware arrived, I installed the drivers and connected to the device
@@ -82,11 +86,19 @@ of the effort here was in making it look nice. I found high-resolution
 textures of the Earth - one for day and one for night. My shader mixes the two
 textures based on the diffuse lighting factor from the sun.
 
+<div class="thumbnail">
+    <img src="{{ static('img/project/gps/earth.png') }}">
+</div>
+
 I also found a texture of stars and put in a simple sky box (sphere actually)
 using that texture.
 
 For the satellites, I'm currently using a 3D .stl model of the Dawn spacecraft
 (not a GPS satellite) until I can find something better.
+
+<div class="thumbnail">
+    <img src="{{ static('img/project/gps/satellite.png') }}">
+</div>
 
 Here is the code for the visualizer: [main.py][6]
 
