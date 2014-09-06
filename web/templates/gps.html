@@ -30,8 +30,7 @@ looked pretty good and it was only $35. I didn't bother doing much research
 as it had good reviews and people mentioned reading data from it in Linux.
 So I just ordered it and hoped it would do what I wanted.
 
-The device I am using is the
-[GlobalSat BU-353-S4 USB GPS Receiver](http://www.amazon.com/GlobalSat-BU-353-S4-USB-Receiver-Black/dp/B008200LHW/).
+The device I am using is the [GlobalSat BU-353-S4 USB GPS Receiver][2].
 
 ##### NMEA 0183
 
@@ -40,7 +39,7 @@ using pyserial. Pretty soon I was reading NMEA "sentences". This is basically
 an ASCII, line-based protocol with all of the GPS data.
 
 I found this manual which documents the different types of messages:
-[NMEA 0183](http://aprs.gids.nl/nmea/)
+[NMEA 0183][3]
 
 I found that the `$GPGSV` message type includes the elevation and azimuth of
 visible satellites. Score! With a little Googling, I also found that GPS
@@ -48,15 +47,14 @@ satellites orbit at an altitude of 20,200 km, so this is all I need to plot
 the 3D positions of the satellites.
 
 My next step was to write a parser to decode the NMEA sentences. Here is the
-module that I wrote:
-[gps.py](https://github.com/fogleman/GPS/blob/master/gps.py)
+module that I wrote: [gps.py][4]
 
 ##### Trigonometry
 
 I next worked out a little math on paper to take an observer's latitude and
 longitude along with the satellite elevation and azimuth to determine the 3D
 coordinates of the satellite. This was a real head-scratcher until my friend
-reminded me of the [law of sines](http://en.wikipedia.org/wiki/Law_of_sines).
+reminded me of the [law of sines][5].
 
 <div class="thumbnail">
     <img src="{{ static('img/project/gps/math.jpg') }}">
@@ -90,15 +88,13 @@ using that texture.
 For the satellites, I'm currently using a 3D .stl model of the Dawn spacecraft
 (not a GPS satellite) until I can find something better.
 
-Here is the code for the visualizer:
-[main.py](https://github.com/fogleman/GPS/blob/master/main.py)
+Here is the code for the visualizer: [main.py][6]
 
 ##### Sun Position
 
 Next I wanted my light source to properly model the actual position of the sun.
 I originally wrote my own code for this based on some pseudo-code I found
-online. But then I found the excellent
-[PyEphem](https://github.com/brandon-rhodes/pyephem) which does it more
+online. But then I found the excellent [PyEphem][7] which does it more
 accurately and with a very simple API!
 
     observer = ephem.Observer()
@@ -123,9 +119,16 @@ accurately and with a very simple API!
 
 #### Videos
 
-* [Real-time GPS Satellite Positions](https://www.youtube.com/watch?v=SwndYCr8le0&vq=hd720)
+* [Real-time GPS Satellite Positions][8]
 
 [1]: https://github.com/fogleman/pg
+[2]: http://www.amazon.com/GlobalSat-BU-353-S4-USB-Receiver-Black/dp/B008200LHW/
+[3]: http://aprs.gids.nl/nmea/
+[4]: https://github.com/fogleman/GPS/blob/master/gps.py
+[5]: http://en.wikipedia.org/wiki/Law_of_sines
+[6]: https://github.com/fogleman/GPS/blob/master/main.py
+[7]: https://github.com/brandon-rhodes/pyephem
+[8]: https://www.youtube.com/watch?v=SwndYCr8le0&vq=hd720
 
 {% endfilter %}
 
