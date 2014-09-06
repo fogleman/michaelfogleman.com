@@ -7,6 +7,7 @@ VIEWS = [
     'resume',
     'craft',
     'dcpu',
+    'gps',
     'hirise',
     'imeme',
     'phrases',
