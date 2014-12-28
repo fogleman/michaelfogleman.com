@@ -29,6 +29,7 @@ REDIRECTS = [
     ('tiling', 'https://github.com/fogleman/Tiling'),
     ('field', 'https://github.com/fogleman/Field'),
     ('piet', 'https://github.com/fogleman/Piet'),
+    ('mister_queen', 'https://github.com/fogleman/MisterQueen'),
 ]
 
 for name, url in REDIRECTS:
