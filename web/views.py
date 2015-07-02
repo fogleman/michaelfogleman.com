@@ -33,6 +33,7 @@ REDIRECTS = [
     ('mister_queen', 'https://github.com/fogleman/MisterQueen'),
     ('wug', 'http://www.michaelfogleman.com/wug/'),
     ('nes', 'https://github.com/fogleman/nes'),
+    ('wooden_map', 'https://medium.com/@fogleman/a-wooden-map-of-north-carolina-a2b21ca47ca2'),
 ]
 
 for name, url in REDIRECTS:
