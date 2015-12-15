@@ -58,5 +58,6 @@ def get_highlights():
     url = 'https://api.imgur.com/2/album/nutJt.json'
     response = requests.get(url)
     images = response.json()['album']['images']
+    images.sort(key=lambda x: x['image']['datetime'], reverse=True)
     hashes = [x['image']['hash'] for x in images]
     return hashes
