@@ -16,8 +16,15 @@ def static(path, bust=False):
 
 @app.context_processor
 def context_processor():
-    repos = get_repos()
-    return dict(static=static, repos=repos)
+    try:
+        repos = get_repos()
+    except Exception:
+        repos = []
+    try:
+        highlights = get_highlights()
+    except Exception:
+        highlights = []
+    return dict(static=static, repos=repos, highlights=highlights)
 
 class CacheDecorator(object):
     cache = SimpleCache()
@@ -45,3 +52,11 @@ def get_repos():
     repos.sort(key=itemgetter('watchers'), reverse=True)
     repos = [x for x in repos if not x['fork'] and not x['private']]
     return repos
+
+@cached(3600)
+def get_highlights():
+    url = 'https://api.imgur.com/2/album/nutJt.json'
+    response = requests.get(url)
+    images = response.json()['album']['images']
+    hashes = [x['image']['hash'] for x in images]
+    return hashes
