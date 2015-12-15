@@ -4,7 +4,7 @@
     <h3>Hello!</h3>
     <div class="row">
         <div class="col-md-8">
-            <p class="lead">My name is Michael Fogleman. I live in Cary, NC with my wife and our two beautiful children. I am a Senior Software Engineer at <a href="http://transloc.com/">TransL&#x014D;c</a>, where I analyze huge data sets and develop software to help improve transit. I love programming and am usually busy with one of many <a href="{{ url_for('projects') }}">personal projects</a>. My favorite programming languages are Python, Go, C and Objective-C, though I also have significant <a href="{{ url_for('resume') }}">experience</a> with several other languages and technologies. I like gardening, photography, '80s music, space exploration and all kinds of food.</p>
+            <p class="lead">My name is Michael Fogleman. I live in Cary, NC with my wife and our two beautiful children. I am a Senior Software Engineer at <a href="http://transloc.com/">TransL&#x014D;c</a>, where I develop software to help improve transit. I love programming and am usually busy with one of many <a href="{{ url_for('projects') }}">side projects</a>. My favorite programming languages are Python, Go, C and Objective-C, though I also have significant <a href="{{ url_for('resume') }}">experience</a> with several other languages and technologies. Much of my computing interest is geared toward graphics. I like gardening, woodworking, '80s music, space exploration and all kinds of food.</p>
         </div>
         <div class="col-md-4">
             <div class="thumbnail" style="margin: 0;">
@@ -14,5 +14,44 @@
                 <h5>My Current Gravatar</h5>
             </div>
         </div>
+    </div>
+    <h3>Highlights</h3>
+    <p class="lead">Here's what I've been up to lately, in the form of pictures...</p>
+
+    {% set items = [
+        'roV5k89',
+        'RAeIZKY',
+        'wGDdj8e',
+        'iVQz22m',
+        'g6GIOkU',
+        'nCsyGs7',
+        'waIIgi4',
+        'KZxQPWf',
+        'bbUclye',
+        'ruNLN3D',
+        '7Uup8AI',
+        'HM6ea23',
+        'V8YMnty',
+        '6BEnIZ0',
+        'B3BxMvD',
+        'zE7xzhD',
+        'RjF5fWF',
+        '7pOHlXT',
+    ] %}
+
+    <div class="highlights">
+        {% for i in range(0, items|length, 4) %}
+            <div class="row">
+                {% for code in items[i:i+4] %}
+                    <div class="col-md-3">
+                        <div class="thumbnail">
+                            <a href="http://i.imgur.com/{{ code }}.png" target="_blank">
+                                <div class="ratio" style="background-image:url('http://i.imgur.com/{{ code }}l.png');"></div>
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}

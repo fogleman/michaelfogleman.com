@@ -5,44 +5,48 @@
 <h3>Projects</h3>
 
 <p class="lead">
-    Here are some personal programming projects that I've worked on over the
+    Here are some side projects that I've worked on over the
     years. Some are very mature and have thousands of users. Others are
-    unpolished projects that I had fun with for just a short time.
+    unpolished projects that I had fun with for a short time.
 </p>
 
 {% set projects = [
-    ('Craft', 'craft', 'craft', false),
-    ('iMeme', 'imeme', 'imeme', false),
-    ('Path Tracer', 'pt', 'pt', true),
-    ('Wooden Map', 'wooden-map', 'wooden_map', true),
-    ('GPS', 'gps', 'gps', false),
-    ('HiRISE', 'hirise', 'hirise', false),
-    ('NES', 'nes', 'nes', true),
-    ('Star Rocket', 'star-rocket', 'star_rocket', false),
-    ('Scale', 'scale', 'scale', false),
-    ('Game Frame', 'game-frame', 'game_frame', true),
-    ('Quads', 'quads', 'quads', true),
-    ('Tiling', 'tiling', 'tiling', true),
-    ('Field', 'field', 'field', true),
-    ('Mister Queen', 'mister-queen', 'mister_queen', true),
-    ('Ricochet Robot', 'ricochet', 'ricochet', false),
-    ('Sync', 'sync', 'sync', true),
-    ('DCPU-16', 'dcpu', 'dcpu', false),
-    ('Piet', 'piet', 'piet', true),
-    ('Feed Notifier', 'feed-notifier', 'feed_notifier', true),
-    ('Phrases', 'phrases', 'phrases', false),
-    ('Wug', 'wug', 'wug', true),
+    ('Craft', 'craft', 'craft', false, "Minecraft clone written in C using modern OpenGL. Very performant."),
+    ('iMeme', 'imeme', 'imeme', false, "Sick of using crappy websites to create your memes? Try iMeme."),
+    ('Path Tracer', 'pt', 'pt', true, "Parallel path tracing renderer written in Go."),
+    ('Wooden Map', 'wooden-map', 'wooden_map', true, "CNC-created map of the 100 counties of North Carolina."),
+    ('GPS', 'gps', 'gps', false, "Live 3D visualization of current GPS satellite positions."),
+    ('HiRISE', 'hirise', 'hirise', false, "Fly through real Martian landscapes using data released by HiRISE."),
+    ('NES', 'nes', 'nes', true, "NES emulator written in Go, includes thumbnail game menu."),
+    ('Star Rocket', 'star-rocket', 'star_rocket', false, "Collect all the stars in this single-player iOS arcade game."),
+    ('Pirate Map', 'pirate-map', 'pirate_map', true, "Procedurally generated pirate treasure maps. X marks the spot!"),
+    ('Mapper', 'mapper', 'mapper', true, "Online tool for plotting and sharing geographical data quickly."),
+    ('Manhattan', 'manhattan', 'manhattan', true, "Visualize the buildings of Manhattan using OSM data."),
+    ('Scale', 'scale', 'scale', false, "Explore the mathematical beauty of fractals with this native Mac app."),
+    ('Game Frame', 'game-frame', 'game_frame', true, "Simulates the appearance of the Game Frame while you edit pixels."),
+    ('Quads', 'quads', 'quads', true, "Computer art based on quadtrees. Written in Python."),
+    ('Tiling', 'tiling', 'tiling', true, "Quickly construct tilings of regular polygons using a simple API."),
+    ('Field', 'field', 'field', true, "Creating computer art by simulating charged particle field lines."),
+    ('Mister Queen', 'mister-queen', 'mister_queen', true, "Simple chess engine written in C. Good enough to beat me at least."),
+    ('Ricochet Robot', 'ricochet', 'ricochet', false, "Board game GUI including a very fast solver."),
+    ('Sync', 'sync', 'sync', true, "Simulating the behavior of synchronizing fireflies."),
+    ('DCPU-16', 'dcpu', 'dcpu', false, "An assembler, disassembler and emulator for the virtual DCPU-16."),
+    ('Piet', 'piet', 'piet', true, "Procedurally generating images in the style of Piet Mondrian."),
+    ('Feed Notifier', 'feed-notifier', 'feed_notifier', true, "Real-time popup notifications for RSS feeds on Windows and OS X."),
+    ('Phrases', 'phrases', 'phrases', false, "Random two-word phrases for creative thinking, code names, etc."),
+    ('Wug', 'wug', 'wug', true, "A unique word game. Find the real word amongst tricky fakes."),
 ] %}
 
 <div class="projects">
     {% for i in range(0, projects|length, 3) %}
         <div class="row">
-            {% for name, folder, endpoint, external in projects[i:i+3] %}
+            {% for name, folder, endpoint, external, description in projects[i:i+3] %}
                 <div class="col-md-4">
                     <a href="{{ url_for(endpoint) }}" class="thumbnail">
                         <img src="{{ static('img/project/' + folder + '/thumbnail.png') }}">
                     </a>
                     <h4>{{ name }}{% if external %} <small><span class="glyphicon glyphicon-new-window"></span></small>{% endif %}</h4>
+                    <p>{{ description }}</p>
                 </div>
             {% endfor %}
         </div>
