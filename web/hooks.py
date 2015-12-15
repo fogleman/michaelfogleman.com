@@ -53,11 +53,11 @@ def get_repos():
     repos = [x for x in repos if not x['fork'] and not x['private']]
     return repos
 
-@cached(3600)
+@cached(600)
 def get_highlights():
-    url = 'https://api.imgur.com/2/album/nutJt.json'
-    response = requests.get(url)
-    images = response.json()['album']['images']
-    images.sort(key=lambda x: x['image']['datetime'], reverse=True)
-    hashes = [x['image']['hash'] for x in images]
-    return hashes
+    url = 'https://api.imgur.com/3/album/nutJt'
+    headers = {'Authorization': 'Client-ID 0da49bd373fcbcd'}
+    response = requests.get(url, headers=headers)
+    images = response.json()['data']['images']
+    images.sort(key=lambda x: x['datetime'], reverse=True)
+    return [x['id'] for x in images]
