@@ -22,6 +22,7 @@ for name in VIEWS:
     app.add_url_rule('/%s/' % hyphenated, name, func)
 
 REDIRECTS = [
+    ('allrgb', 'https://github.com/fogleman/AllRGB'),
     ('wang_tiling', 'https://github.com/fogleman/WangTiling'),
     ('dr_mario', 'https://github.com/fogleman/DrMario'),
     ('pt', 'https://github.com/fogleman/pt'),
