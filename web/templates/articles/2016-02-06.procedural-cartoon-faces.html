@@ -1,0 +1,28 @@
+{% from "util.html" import article_title with context %}
+
+{{ article_title('Procedural Cartoon Faces') }}
+
+{% filter markdown %}
+
+<a href="//i.imgur.com/hqhrx9T.jpg" class="thumbnail">
+    <img src="//i.imgur.com/hqhrx9T.jpg">
+</a>
+
+While doodling and brainstorming, trying to think of something else to
+draw with my XY plotter, I thought about generating random eyes.
+
+I started by generating random ellipses for the eye outline and another
+random ellipse for the pupil. Of course, these all looked like boobs, so I
+decided to add a nose (yet another ellipse). It started looking better, so
+then I added an arc for the mouth.
+
+I generated several such random faces and placed them in a grid. I'm quite
+pleased with the result and I'll probably try more variations on this theme
+soon.
+
+Probably my favorite part are the "mistakes." Sometimes the pupils go outside
+of the eyes, and the eyes becomes more like a pair of eyebrows. Sometimes
+the mouth is so close to the nose, it looks more like a mustache. So I left
+these quirks in intentionally.
+
+{% endfilter %}
