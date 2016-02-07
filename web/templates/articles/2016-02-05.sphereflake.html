@@ -52,6 +52,10 @@ that had a lot of spheres in them. Even with a k-d tree to accelerate ray
 intersection tests, the final frames with thousands of spheres were taking
 12+ minutes each on my computer. The 36 core instance took 2-3 minutes on each.
 
+To make using EC2 easier, I used Fabric to automate setting up the instances
+and fetching rendered images from them. Here's my
+[fabfile.py](https://github.com/fogleman/pt/blob/master/fabfile.py).
+
 Of course, while creating the animation I was able to test it at a much smaller
 resolution and with far fewer samples per pixel. Then I could render the whole
 animation in a minute or two.
