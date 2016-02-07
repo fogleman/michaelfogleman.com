@@ -1,0 +1,40 @@
+{% from "util.html" import article_title with context %}
+
+{{ article_title('3D Vector Graphics & Line Art') }}
+
+{% filter markdown %}
+
+<a href="//i.imgur.com/HY2Fg2t.png" class="thumbnail">
+    <img src="//i.imgur.com/HY2Fg2t.png">
+</a>
+
+If you follow my Twitter feed, you know that I've been making heavy use of
+the [Makeblock XY Plotter](http://www.makeblock.cc/xy-plotter-robot-kit/) that
+I recently purchased.
+
+Seeing as how I've done a lot of 3D graphics before, I wondered how I could
+draw some 3D scenes with the plotter. What I came up with mostly resembles
+a ray tracer, but it sort of works in reverse. Basically, the scene is made
+up of solid objects like spheres, cubes, cylinders or meshes. Each solid
+has some 3D polylines on its surface. The engine finely chops up these lines,
+and casts a ray from each point toward the camera. If nothing intersects the
+ray, then that part of the polyline is visible. The visible portions of the
+lines are then transformed to 2D space and the output of the engine is
+a set of 2D polylines which can be saved as SVG, rendered to a PNG, or sent
+off to the plotter. Cool!
+
+I based the code off of my Go path tracer. I ripped out a bunch of stuff that
+was no longer needed and then added the code to do what I just described above.
+
+It's pretty easy to use, and I put some good examples and docs up on GitHub.
+Check it out!
+
+https://github.com/fogleman/ln
+
+This is probably my favorite 3D drawing so far...
+
+<a href="//i.imgur.com/NbgpUhQ.png" class="thumbnail">
+    <img src="//i.imgur.com/NbgpUhQ.png">
+</a>
+
+{% endfilter %}
