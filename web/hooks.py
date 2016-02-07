@@ -1,3 +1,4 @@
+from collections import namedtuple
 from flask import url_for
 from functools import wraps
 from operator import itemgetter
@@ -24,7 +25,9 @@ def context_processor():
         highlights = get_highlights()
     except Exception:
         highlights = []
-    return dict(static=static, repos=repos, highlights=highlights)
+    articles = get_articles()
+    return dict(
+        static=static, repos=repos, highlights=highlights, articles=articles)
 
 class CacheDecorator(object):
     cache = SimpleCache()
@@ -61,3 +64,20 @@ def get_highlights():
     images = response.json()['data']['images']
     images.sort(key=lambda x: x['datetime'], reverse=True)
     return [x['id'] for x in images]
+
+Article = namedtuple('Article', ['date', 'url', 'template', 'endpoint'])
+
+@cached(600)
+def get_articles():
+    directory = os.path.join(app.root_path, app.template_folder, 'articles')
+    paths = sorted(os.listdir(directory), reverse=True)
+    paths = [x for x in paths if x.endswith('.html')]
+    articles = []
+    for i, path in enumerate(paths):
+        date = path[:10]
+        name = path[11:][:-5]
+        url = '/articles/%s/%s/' % (date, name)
+        template = 'articles/%s' % path
+        endpoint = 'article%d' % i
+        articles.append(Article(date, url, template, endpoint))
+    return articles

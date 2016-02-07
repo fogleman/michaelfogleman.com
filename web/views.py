@@ -1,9 +1,11 @@
 from flask import render_template, redirect
 from functools import partial
 from web import app
+import hooks
 
 VIEWS = [
     'projects',
+    'articles',
     'resume',
     'craft',
     'dcpu',
@@ -50,3 +52,7 @@ for name, url in REDIRECTS:
 @app.route('/')
 def index():
     return render_template('index.html')
+
+for article in hooks.get_articles():
+    func = partial(render_template, 'article.html', article=article)
+    app.add_url_rule(article.url, article.endpoint, func)

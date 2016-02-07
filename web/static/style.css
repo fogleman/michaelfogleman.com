@@ -12,6 +12,11 @@ h4, h5, h6 {
     }
 }
 
+video {
+    width: 100% !important;
+    height: auto !important;
+}
+
 .embed-responsive {
     margin-bottom: 22px;
 }
@@ -81,4 +86,8 @@ p.lead {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+}
+
+.plain-link {
+    color: #333;
 }

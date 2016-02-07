@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for article in articles %}
+    {% include article.template with context %}
+    {% if not loop.last %}
+        <hr>
+    {% endif %}
+{% endfor %}
+
+{% endblock %}

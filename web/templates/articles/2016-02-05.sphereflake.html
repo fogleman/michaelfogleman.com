@@ -1,0 +1,59 @@
+{% from "util.html" import article_title with context %}
+
+{{ article_title('Sphereflake Animation') }}
+
+{% filter markdown %}
+
+<video controls autoplay loop>
+    <source src="//www.michaelfogleman.com/static/sphere-fractal.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+#### Features
+
+* 480 frames
+* 30 frames per second
+* 16 second duration
+* 1920 x 1280 resolution
+* 256 samples per pixel
+
+#### Story
+
+About a year ago, I created my own
+[path tracing](https://en.wikipedia.org/wiki/Path_tracing) renderer. It's
+written in Go and has no dependencies besides the standard library. You can
+find it on GitHub: https://github.com/fogleman/pt
+
+A few days ago, [@barrelshifter](https://twitter.com/barrelshifter) posted
+some screenshots of a sphere fractal from her ray tracer. I thought it looked
+cool, so I decided to replicate it in my path tracer. Here's how that turned
+out...
+
+<a href="http://i.imgur.com/ED6A5HS.png" class="thumbnail">
+    <img src="http://i.imgur.com/ED6A5HS.png">
+</a>
+
+That was cool, but then I had the idea of animating it!
+
+I used some [easing functions](http://easings.net/) to control the elastic
+bouncing as each sphere appears and the quick fade out at the end. Each sphere
+within a population appears with a random offset that follows a normal
+distribution. I manually specified the mean entry time for each population to
+make it feel less regular and more spontaneous.
+
+Path traced images can appear very realistic, particularly with well-modeled
+scenes, as they simulate how light actually behaves in the real world. This
+results in realistic indirect lighting and shadows.
+
+But it's also very slow. This animation took about 24 hours to render. Most of
+it was rendered on my home computer but toward the end I launched an Amazon
+EC2 instance with 36 x 2.9 GHz cores to crank through the remaining frames
+that had a lot of spheres in them. Even with a k-d tree to accelerate ray
+intersection tests, the final frames with thousands of spheres were taking
+12+ minutes each on my computer. The 36 core instance took 2-3 minutes on each.
+
+Of course, while creating the animation I was able to test it at a much smaller
+resolution and with far fewer samples per pixel. Then I could render the whole
+animation in a minute or two.
+
+{% endfilter %}
