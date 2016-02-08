@@ -94,3 +94,7 @@ p.lead {
 .plain-link {
     color: #333;
 }
+
+.plain-link:hover {
+    color: #333;
+}
