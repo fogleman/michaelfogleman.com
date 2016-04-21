@@ -44,7 +44,7 @@ REDIRECTS = [
     ('wooden_map', 'https://medium.com/@fogleman/a-wooden-map-of-north-carolina-a2b21ca47ca2'),
     ('gg', 'https://github.com/fogleman/gg'),
     ('ln', 'https://github.com/fogleman/ln'),
-    ('density', 'https://github.com/fogleman/density'),
+    ('point_maps', 'https://github.com/fogleman/density'),
 ]
 
 for name, url in REDIRECTS:
