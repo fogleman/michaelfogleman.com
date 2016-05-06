@@ -1,0 +1,56 @@
+{% from "util.html" import article_title with context %}
+
+{{ article_title('Rendering the Grand Canyon') }}
+
+{% filter markdown %}
+
+<div class="youtube">
+    <iframe src="https://www.youtube.com/embed/mzwfoL35qZQ" frameborder="0" allowfullscreen></iframe>
+</div>
+
+This week, I attended the FOSS4G conference here in Raleigh. While there,
+I learned about Mapzen's new
+[elevation tiles](https://mapzen.com/blog/elevation/). These tiles come in a
+variety of formats including terrarium, normal map, geotiff, and skadi. This is
+really nice, not because this data wasn't available before, but because
+it's more easily accessible and easier to deal with in the form of tiles. So I
+decided to see what I could do with this new resource.
+
+I already had some
+[Go code](https://github.com/fogleman/density/blob/master/stitch/main.go) that
+can download and stitch tiles from any tile server into a large image. I
+stitched together three different sets of tiles: terrarium, normals and
+satellite imagery. The terrarium data is basically height map data that I used
+to generate a 3D mesh. The normal map is used to provide higher resolution
+lighting on the lower resolution mesh. And the satellite imagery is used for
+color information on the terrain. I used MapQuestOpen.Aerial for the satellite
+imagery, found on the
+[Leaflet providers](https://leaflet-extras.github.io/leaflet-providers/preview/)
+site. Here are the three stitched images...
+
+<div class="row">
+    <div class="col-md-4">
+        <a href="//i.imgur.com/YLzxJMs.png" class="thumbnail">
+            <img src="//i.imgur.com/YLzxJMs.png">
+        </a>
+    </div>
+    <div class="col-md-4">
+        <a href="//i.imgur.com/1UGO9XS.png" class="thumbnail">
+            <img src="//i.imgur.com/1UGO9XS.png">
+        </a>
+    </div>
+    <div class="col-md-4">
+        <a href="//i.imgur.com/QbgQrRW.png" class="thumbnail">
+            <img src="//i.imgur.com/QbgQrRW.png">
+        </a>
+    </div>
+</div>
+
+Again, the terrarium image was used to generate a 3D mesh that I saved as
+an STL file. You can see some of that code
+[here](https://gist.github.com/fogleman/e4e747ad37aa5b99f3eec1c200cba12c). The
+other two images were used as textures for OpenGL. I used my Python OpenGL
+library, [pg](https://github.com/fogleman/pg), that makes it really easy to put
+together simple OpenGL apps. I used it to create the video above.
+
+{% endfilter %}
