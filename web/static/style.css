@@ -100,7 +100,7 @@ p.lead {
 .ratio {
     position: relative;
     width: 100%;
-    height: 160px;
+    height: 190px;
     padding-bottom: 50%;
     background-repeat: no-repeat;
     background-position: center center;
@@ -113,4 +113,17 @@ p.lead {
 
 .plain-link:hover {
     color: #333;
+}
+
+.highlights .col-sm-3 {
+    padding: 2px !important;
+}
+
+.highlights .thumbnail {
+    margin-bottom: 0;
+    padding: 1px;
+}
+
+.highlights .ratio {
+    border-radius: 4px;
 }

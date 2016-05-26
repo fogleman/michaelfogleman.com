@@ -3,35 +3,24 @@
 {% block content %}
     <h3>Hello!</h3>
     <div class="row">
-        <div class="col-md-8">
-            <p class="lead">My name is Michael Fogleman. I live in Cary, NC with my wife and our two beautiful children. I work at <a href="http://transloc.com/">TransL&#x014D;c</a>, where I develop software to help improve transit. I love programming and am usually busy with <a href="{{ url_for('projects') }}">side projects</a>. My favorite languages are Python and Go, though I also have <a href="{{ url_for('resume') }}">experience</a> with several other languages and technologies. Much of my computing interest is geared toward graphics. I like gardening, woodworking, '80s music, space exploration and all kinds of food.</p>
-            <div>
-                <a href="https://twitter.com/FogleBird" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @FogleBird</a>
-                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                <a class="github-button" href="https://github.com/fogleman" data-style="mega" data-count-href="/fogleman/followers" data-count-api="/users/fogleman#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @fogleman on GitHub">Follow @fogleman</a>
-                <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
-            </div>
+        <div class="col-sm-8">
+            <p class="lead">My name is Michael Fogleman. I live in Cary, NC with my wife and our two beautiful children. I work at <a href="http://transloc.com/">TransL&#x014D;c</a>, where I develop software to help improve transit. I love programming and am usually busy with <a href="{{ url_for('projects') }}">side projects</a>. My favorite languages are Python and Go, but I have broad <a href="{{ url_for('resume') }}">experience</a> with many languages and technologies. Much of my computing interest is geared toward graphics. I like gardening, woodworking, '80s music, space exploration and all kinds of food.</p>
         </div>
-        <div class="col-md-4">
-            <div class="thumbnail" style="margin: 0;">
+        <div class="col-sm-4">
+            <div class="thumbnail">
                 <img src="//www.gravatar.com/avatar/7b7aefbc459629eb4c864b825894c9c4.png?s=512">
-            </div>
-            <div style="text-align: center;">
-                <h5>My Current Gravatar</h5>
             </div>
         </div>
     </div>
     <hr>
-    <h3>Highlights</h3>
-    <p class="lead">Here's what I've been up to lately, in the form of pictures...</p>
     <div class="highlights">
         {% for i in range(0, highlights|length, 4) %}
             <div class="row">
                 {% for hash in highlights[i:i+4] %}
-                    <div class="col-md-3">
+                    <div class="col-sm-3">
                         <div class="thumbnail">
                             <a href="//i.imgur.com/{{ hash }}.png" target="_blank">
-                                <div class="ratio" style="background-image:url('//i.imgur.com/{{ hash }}l.png');"></div>
+                                <div class="ratio" style="background-image: url('//i.imgur.com/{{ hash }}l.png');"></div>
                             </a>
                         </div>
                     </div>
