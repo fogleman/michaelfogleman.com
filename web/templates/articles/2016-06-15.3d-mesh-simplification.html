@@ -1,0 +1,21 @@
+{% from "util.html" import article_title with context %}
+
+{{ article_title('3D Mesh Simplification') }}
+
+{% filter markdown %}
+
+<a href="//i.imgur.com/Ttf5XzH.png" class="thumbnail">
+    <img src="//i.imgur.com/Ttf5XzH.png">
+</a>
+
+After working on the Grand Canyon visualization, I started wondering about 3D mesh simplification algorithms. This is because the naive approach in generating a mesh from height map data results in a very large number of triangles even in areas with little detail.
+
+So, I did some research and found what seemed to be a good algorithm for mesh simplification - [Surface Simplification Using Quadric Error Metrics, SIGGRAPH 97](http://cseweb.ucsd.edu/~ravir/190/2016/garland97.pdf). It took some time to wrap my head around it, but I was successfully able to implement the algorithm in Go.
+
+My code provides a simple Go API for simplifying a mesh as well as a command-line binary for simplifying an STL file by some percentage.
+
+The bunny example above shows a mesh with 270,000 triangles and a simplified version with just 2,700 triangles (1% of the original).
+
+https://github.com/fogleman/simplify
+
+{% endfilter %}
