@@ -56,18 +56,18 @@ def get_repos():
     repos = [x for x in repos if not x['fork'] and not x['private']]
     return repos
 
-@cached(600)
+@cached(60)
 def get_highlights():
-    url = 'https://api.imgur.com/3/album/nutJt'
-    headers = {'Authorization': 'Client-ID 0da49bd373fcbcd'}
-    response = requests.get(url, headers=headers)
-    images = response.json()['data']['images']
-    images.sort(key=lambda x: x['datetime'], reverse=True)
-    return [x['id'] for x in images]
+    exts = set(['.png', '.jpg', '.jpeg'])
+    path = app.config['GALLERY_DIR']
+    mtime = lambda f: os.stat(os.path.join(path, f)).st_mtime
+    names = sorted(os.listdir(path), key=mtime, reverse=True)
+    names = [x for x in names if os.path.splitext(x)[1].lower() in exts]
+    return names
 
 Article = namedtuple('Article', ['date', 'url', 'template', 'endpoint'])
 
-@cached(600)
+@cached(60)
 def get_articles():
     directory = os.path.join(app.root_path, app.template_folder, 'articles')
     paths = sorted(os.listdir(directory), reverse=True)

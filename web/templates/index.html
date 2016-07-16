@@ -16,11 +16,11 @@
     <div class="highlights">
         {% for i in range(0, highlights|length, 3) %}
             <div class="row">
-                {% for hash in highlights[i:i+3] %}
+                {% for name in highlights[i:i+3] %}
                     <div class="col-sm-4">
                         <div class="thumbnail">
-                            <a href="//i.imgur.com/{{ hash }}.png" target="_blank">
-                                <div class="ratio" style="background-image: url('//i.imgur.com/{{ hash }}l.png');"></div>
+                            <a href="{{ config['GALLERY_URL'] }}/{{ name }}" target="_blank">
+                                <div class="ratio" style="background-image: url('{{ config['GALLERY_URL'] }}/thumbs/{{ name }}.jpg');"></div>
                             </a>
                         </div>
                     </div>
