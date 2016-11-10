@@ -49,6 +49,23 @@
     </a>
 </div>
 
+### How it Works
+
+This ain't your mama's image filter!
+
+The user provides an image as input. The program tries to find the single most optimal shape that can be drawn to minimize the error between the target image and the drawn image. It repeats this process, adding one shape at a time.
+
+Using this process, the program can recreate a photo with surprisingly few shapes. It is quite CPU intensive, but Primitive is optimized to do it as quickly as possible. And the output is inherently vector-based!
+
+<div class="row" style="margin-top: 10px;">
+    <div class="col-md-6" style="padding: 0 5px;">
+        <img class="img-thumbnail" src="https://www.michaelfogleman.com/static/primitive/examples/monalisa.3.2000.gif">
+    </div>
+    <div class="col-md-6" style="padding: 0 5px;">
+        <img class="img-thumbnail" src="https://www.michaelfogleman.com/static/primitive/examples/monalisa-original.png">
+    </div>
+</div>
+
 ### Features Explained
 
 <div class="thumbnail">
@@ -79,7 +96,7 @@ Primitive can save its drawing in PNG, JPEG, or SVG formats. You can also set an
 ### Tips
 
 * You can change most of the settings in the middle of a drawing. One interesting use of this is to draw some filled-in shapes first and then draw bezier curves on top to fill in the details.
-* The results are somewhat random, so you won't get the same output twice, even with the same inputs. One interesting use of this is to generate multiple images with the same input and then make an animated GIF of them to bring a static image to life.
+* The results are somewhat random, so you won't get the same output twice, even with the same inputs. One interesting use of this is to generate multiple images with the same input and then make an [animated GIF](https://www.michaelfogleman.com/static/primitive/examples/pencils.gif) of them to bring a static image to life.
 * It's fun to hide the toolbar and enter full screen mode to watch the program draw your photos!
 
 ### Twitter
