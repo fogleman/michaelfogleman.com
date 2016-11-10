@@ -16,6 +16,7 @@ VIEWS = [
     'ricochet',
     'scale',
     'star_rocket',
+    'primitive',
 ]
 
 for name in VIEWS:

@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% filter markdown %}
+
+<h2 class="text-center">Primitive for macOS</h2>
+
+<p class="lead" style="text-align: center;">
+    Recreate your photos with vector-based geometric primitives.
+</p>
+
+<div class="thumbnail" style="border: none;">
+    <a href="https://itunes.apple.com/us/app/scale/id610187081?ls=1&mt=12">
+        <img src="{{ static('img/project/primitive/primitive1.png') }}">
+    </a>
+</div>
+
+<div class="row" style="margin-top: 0px;">
+    <div class="col-md-6" style="padding: 0 5px;">
+        <img class="img-thumbnail" src="{{ static('img/project/primitive/1.png') }}">
+    </div>
+    <div class="col-md-6" style="padding: 0 5px;">
+        <img class="img-thumbnail" src="{{ static('img/project/primitive/2.png') }}">
+    </div>
+</div>
+<div class="row" style="margin-top: 10px;">
+    <div class="col-md-6" style="padding: 0 5px;">
+        <img class="img-thumbnail" src="{{ static('img/project/primitive/3.png') }}">
+    </div>
+    <div class="col-md-6" style="padding: 0 5px;">
+        <img class="img-thumbnail" src="{{ static('img/project/primitive/4.png') }}">
+    </div>
+</div>
+<div class="row" style="margin-top: 10px;">
+    <div class="col-md-6" style="padding: 0 5px;">
+        <img class="img-thumbnail" src="{{ static('img/project/primitive/5.png') }}">
+    </div>
+    <div class="col-md-6" style="padding: 0 5px;">
+        <img class="img-thumbnail" src="{{ static('img/project/primitive/6.png') }}">
+    </div>
+</div>
+
+---
+
+<div style="text-align: center; margin: 40px 0;">
+    <a href="https://itunes.apple.com/us/app/scale/id610187081?ls=1&mt=12">
+        <img src="{{ static('img/platform/mac-app-store.png') }}">
+    </a>
+</div>
+
+### Features Explained
+
+<div class="thumbnail">
+    <a href="https://itunes.apple.com/us/app/scale/id610187081?ls=1&mt=12">
+        <img src="{{ static('img/project/primitive/dialog.png') }}">
+    </a>
+</div>
+
+* **Image***: Choose the input image that you want the program to draw using primitive shapes.
+* **Shape type**: Choose the type of shape that the program should use to draw your image. Most of these are filled shapes, but the beziers are stroked. Combo mode allows the program to pick the best shape at each iteration.
+* **Shape alpha**: Constrain the program to use a particular alpha value for each shape, or uncheck the box to let the program optimize the alpha value for each shape individually.
+* **Stroke width**: Set the stroke width to be used for quadratic bezier curves. Uncheck the box to let the program optimize the stroke width for each curve.
+* **Shapes per iteration**: Generate multiple shapes during each iteration with a more localized search. This is most useful for bezier curves to get good image coverage more quickly.
+* **Background color***: Set the background color upon which the shapes will be drawn. Uncheck the box to use the average color of the input image as the background.
+* **Quality***: Choose between speed and quality. Essentially, this option scales the input image to a certain size before running the algorithm on it.
+* **Run until stopped**: Choose this mode to run indefinitely, until the image appearance is to your liking.
+* **Run until shapes**: Choose this mode to stop running after a certain number of shapes have been generated.
+* **Run until score**: Chose thise mode to stop running once the drawn image has a certain amount of similarity to the original input image.
+* **Clear drawing**: Clear the drawing to start over with new options.
+* **Revert to defaults**: Reset all of the options except for image and shape type back to their original settings.
+
+Note: options marked with an asterisk require restarting the drawing if changed.
+
+### Formats
+
+Primitive can save its drawing in PNG, JPEG, or SVG formats. You can also set an output resolution to scale it up or down. SVG output consists of a single &lt;rect&gt; element for the background and &lt;path&gt; elements for each shape.
+
+### Tips
+
+* You can change most of the settings in the middle of a drawing. One interesting use of this is to draw some filled-in shapes first and then draw bezier curves on top to fill in the details.
+* The results are somewhat random, so you won't get the same output twice, even with the same inputs. One interesting use of this is to generate multiple images with the same input and then make an animated GIF of them to bring a static image to life.
+* It's fun to hide the toolbar and enter full screen mode to watch the program draw your photos!
+
+### Twitter
+
+Follow [@PrimitivePic](https://twitter.com/PrimitivePic) on Twitter to see a new primitive picture every 30 minutes!
+
+### Support
+
+Comments, questions, or concerns? Feature requests or bug reports? Contact: [michael.fogleman@gmail.com](mailto:michael.fogleman@gmail.com)
+
+{% endfilter %}
+
+{% endblock %}
