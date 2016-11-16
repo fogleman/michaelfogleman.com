@@ -16,7 +16,7 @@ VIEWS = [
     'ricochet',
     'scale',
     'star_rocket',
-    'primitive',
+    # 'primitive',
 ]
 
 for name in VIEWS:
@@ -39,6 +39,7 @@ REDIRECTS = [
     ('mapper', 'http://www.michaelfogleman.com/mapper/'),
     ('piet', 'https://github.com/fogleman/Piet'),
     ('pirate_map', 'https://github.com/fogleman/PirateMap'),
+    ('primitive', 'https://primitive.lol'),
     ('mister_queen', 'https://github.com/fogleman/MisterQueen'),
     ('wug', 'http://www.michaelfogleman.com/wug/'),
     ('nes', 'https://github.com/fogleman/nes'),
