@@ -4,37 +4,45 @@
     <h3>Random Two-Word Phrases</h3>
     <p class="lead">
         The phrases below were generated randomly. Click the button to generate new ones. Use them for creative thinking, code names, password phrases, band names, etc.
-        The second batch of phrases use <abbr title="the repetition of usually initial consonant sounds in two or more neighboring words">alliteration</abbr> (sort of).
+        The second batch of phrases use <abbr title="the repetition of usually initial consonant sounds in two or more neighboring words">alliteration</abbr> (sort of). The "mnemonics" are taken from the <a href="https://gist.github.com/fogleman/c4a1f69f34c7e8a00da8">Mnemonic Encoding Word List</a>.
     </p>
     <div class="button-row">
         <a class="btn btn-large btn-primary" href="" onclick="update(); return false;">Generate Phrases</a>
     </div>
     <div class="row words-row">
-        <div class="col-md-4">
+        <div class="col-xs-3">
             <h4>Adjective + Noun</h4>
             <div id="adjective_noun"></div>
         </div>
-        <div class="col-md-4">
+        <div class="col-xs-3">
             <h4>Noun + Noun</h4>
             <div id="noun_noun"></div>
         </div>
-        <div class="col-md-4">
+        <div class="col-xs-3">
             <h4>Verb + Noun</h4>
             <div id="verb_noun"></div>
         </div>
+        <div class="col-xs-3">
+            <h4>Mnemonics</h4>
+            <div id="mnemonics"></div>
+        </div>
     </div>
     <div class="row words-row">
-        <div class="col-md-4">
+        <div class="col-xs-3">
             <h4>Adjective + Noun*</h4>
             <div id="a_adjective_noun"></div>
         </div>
-        <div class="col-md-4">
+        <div class="col-xs-3">
             <h4>Noun + Noun*</h4>
             <div id="a_noun_noun"></div>
         </div>
-        <div class="col-md-4">
+        <div class="col-xs-3">
             <h4>Verb + Noun*</h4>
             <div id="a_verb_noun"></div>
+        </div>
+        <div class="col-xs-3">
+            <h4>Mnemonics*</h4>
+            <div id="a_mnemonics"></div>
         </div>
     </div>
     <div class="button-row">

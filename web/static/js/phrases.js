@@ -30,9 +30,11 @@ function update() {
     $("#a_adjective_noun").html(generate(ADJECTIVES, NOUNS, count, true));
     $("#a_noun_noun").html(generate(NOUNS, NOUNS, count, true));
     $("#a_verb_noun").html(generate(VERBS, NOUNS, count, true));
+    $("#a_mnemonics").html(generate(MNEMONICS, MNEMONICS, count, true));
     $("#adjective_noun").html(generate(ADJECTIVES, NOUNS, count, false));
     $("#noun_noun").html(generate(NOUNS, NOUNS, count, false));
     $("#verb_noun").html(generate(VERBS, NOUNS, count, false));
+    $("#mnemonics").html(generate(MNEMONICS, MNEMONICS, count, false));
 }
 
 $(function() {
