@@ -4,70 +4,14 @@
 
 {% filter markdown %}
 
+<a href="https://www.michaelfogleman.com/static/spherical-harmonics/" class="thumbnail">
+    <img src="https://www.michaelfogleman.com/static/spherical-harmonics/sh.4.7.png">
+</a>
+
 I recently learned of [Spherical Harmonics](https://en.wikipedia.org/wiki/Spherical_harmonics) and immediately proceeded to render them using my path tracer. For each render, I used marching cubes to generate a mesh for ray-intersection tests. But I used the gradient of the harmonic function to compute the surface normals for a nice, smooth appearance. The axes are modeled using a capsule-shaped signed distance function. I like how even the axes cast shadows.
 
 I have yet to truly grok the applications of spherical harmonics. I really only learned enough to be able to render them.
 
-Click on an image to see the large version.
+[View the gallery here.](https://www.michaelfogleman.com/static/spherical-harmonics/)
 
 {% endfilter %}
-
-<table class="spherical-harmonics">
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td><a href="{{ static('img/project/spherical-harmonics/sh.0.10.png') }}"><img class="img-responsive" src="{{ static('img/project/spherical-harmonics/sh.0.10.png') }}"></a></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td><a href="{{ static('img/project/spherical-harmonics/sh.1.9.png') }}"><img class="img-responsive" src="{{ static('img/project/spherical-harmonics/sh.1.9.png') }}"></a></td>
-<td><a href="{{ static('img/project/spherical-harmonics/sh.1.10.png') }}"><img class="img-responsive" src="{{ static('img/project/spherical-harmonics/sh.1.10.png') }}"></a></td>
-<td><a href="{{ static('img/project/spherical-harmonics/sh.1.11.png') }}"><img class="img-responsive" src="{{ static('img/project/spherical-harmonics/sh.1.11.png') }}"></a></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><a href="{{ static('img/project/spherical-harmonics/sh.2.8.png') }}"><img class="img-responsive" src="{{ static('img/project/spherical-harmonics/sh.2.8.png') }}"></a></td>
-<td><a href="{{ static('img/project/spherical-harmonics/sh.2.9.png') }}"><img class="img-responsive" src="{{ static('img/project/spherical-harmonics/sh.2.9.png') }}"></a></td>
-<td><a href="{{ static('img/project/spherical-harmonics/sh.2.10.png') }}"><img class="img-responsive" src="{{ static('img/project/spherical-harmonics/sh.2.10.png') }}"></a></td>
-<td><a href="{{ static('img/project/spherical-harmonics/sh.2.11.png') }}"><img class="img-responsive" src="{{ static('img/project/spherical-harmonics/sh.2.11.png') }}"></a></td>
-<td><a href="{{ static('img/project/spherical-harmonics/sh.2.12.png') }}"><img class="img-responsive" src="{{ static('img/project/spherical-harmonics/sh.2.12.png') }}"></a></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td><a href="{{ static('img/project/spherical-harmonics/sh.3.7.png') }}"><img class="img-responsive" src="{{ static('img/project/spherical-harmonics/sh.3.7.png') }}"></a></td>
-<td><a href="{{ static('img/project/spherical-harmonics/sh.3.8.png') }}"><img class="img-responsive" src="{{ static('img/project/spherical-harmonics/sh.3.8.png') }}"></a></td>
-<td><a href="{{ static('img/project/spherical-harmonics/sh.3.9.png') }}"><img class="img-responsive" src="{{ static('img/project/spherical-harmonics/sh.3.9.png') }}"></a></td>
-<td><a href="{{ static('img/project/spherical-harmonics/sh.3.10.png') }}"><img class="img-responsive" src="{{ static('img/project/spherical-harmonics/sh.3.10.png') }}"></a></td>
-<td><a href="{{ static('img/project/spherical-harmonics/sh.3.11.png') }}"><img class="img-responsive" src="{{ static('img/project/spherical-harmonics/sh.3.11.png') }}"></a></td>
-<td><a href="{{ static('img/project/spherical-harmonics/sh.3.12.png') }}"><img class="img-responsive" src="{{ static('img/project/spherical-harmonics/sh.3.12.png') }}"></a></td>
-<td><a href="{{ static('img/project/spherical-harmonics/sh.3.13.png') }}"><img class="img-responsive" src="{{ static('img/project/spherical-harmonics/sh.3.13.png') }}"></a></td>
-<td></td>
-</tr>
-<!--
-<tr>
-<td><a href="{{ static('img/project/spherical-harmonics/sh.4.6.png') }}"><img class="img-responsive" src="{{ static('img/project/spherical-harmonics/sh.4.6.png') }}"></a></td>
-<td><a href="{{ static('img/project/spherical-harmonics/sh.4.7.png') }}"><img class="img-responsive" src="{{ static('img/project/spherical-harmonics/sh.4.7.png') }}"></a></td>
-<td><a href="{{ static('img/project/spherical-harmonics/sh.4.8.png') }}"><img class="img-responsive" src="{{ static('img/project/spherical-harmonics/sh.4.8.png') }}"></a></td>
-<td><a href="{{ static('img/project/spherical-harmonics/sh.4.9.png') }}"><img class="img-responsive" src="{{ static('img/project/spherical-harmonics/sh.4.9.png') }}"></a></td>
-<td><a href="{{ static('img/project/spherical-harmonics/sh.4.10.png') }}"><img class="img-responsive" src="{{ static('img/project/spherical-harmonics/sh.4.10.png') }}"></a></td>
-<td><a href="{{ static('img/project/spherical-harmonics/sh.4.11.png') }}"><img class="img-responsive" src="{{ static('img/project/spherical-harmonics/sh.4.11.png') }}"></a></td>
-<td><a href="{{ static('img/project/spherical-harmonics/sh.4.12.png') }}"><img class="img-responsive" src="{{ static('img/project/spherical-harmonics/sh.4.12.png') }}"></a></td>
-<td><a href="{{ static('img/project/spherical-harmonics/sh.4.13.png') }}"><img class="img-responsive" src="{{ static('img/project/spherical-harmonics/sh.4.13.png') }}"></a></td>
-<td><a href="{{ static('img/project/spherical-harmonics/sh.4.14.png') }}"><img class="img-responsive" src="{{ static('img/project/spherical-harmonics/sh.4.14.png') }}"></a></td>
-</tr>
--->
-</table>
