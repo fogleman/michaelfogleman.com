@@ -127,3 +127,11 @@ p.lead {
 .highlights .ratio {
     border-radius: 4px;
 }
+
+.spherical-harmonics {
+    background: #000;
+}
+
+.spherical-harmonics td {
+    border: 1px solid #333;
+}
